@@ -9,8 +9,6 @@ RUN chown -R 1001:0 /config && \
     chmod -R g+rw /config && \
     chown -R 1001:0 /opt/ibm/wlp/usr/servers/defaultServer && \
     chmod -R g+rw /opt/ibm/wlp/usr/servers/defaultServer && \
-    chown -R 1001:0 /opt/ibm/wlp/output && \
-    chmod -R g+rw /opt/ibm/wlp/output && \
     chown -R 1001:0 /logs && \
     chmod -R g+rw /logs && \
     installUtility install defaultServer && \
