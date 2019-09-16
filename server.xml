@@ -1,7 +1,17 @@
 <server description="Hello World Server">
 
  <featureManager>
-   <feature>jsp-2.3</feature>
+        <feature>javaMail-1.5</feature>
+        <feature>jaxb-2.2</feature>
+        <feature>jdbc-4.1</feature>
+        <feature>jndi-1.0</feature>
+        <feature>jpa-2.1</feature>
+        <feature>jsp-2.3</feature>
+        <feature>jaxrs-2.0</feature>
+        <feature>localConnector-1.0</feature>
+        <feature>jaxws-2.2</feature>
+        <feature>servlet-3.1</feature>
+        <feature>transportSecurity-1.0</feature>
  </featureManager>
 
 <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" />
