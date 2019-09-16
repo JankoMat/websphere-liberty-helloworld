@@ -1,6 +1,6 @@
 FROM websphere-liberty:19.0.0.5-kernel
 
-COPY hello-world.war /config/dropins
+COPY helloworld.war /config/dropins
 COPY server.xml /config/
 
 USER root
