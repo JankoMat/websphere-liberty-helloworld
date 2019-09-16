@@ -4,5 +4,5 @@
     element, e.g. host="*" -->
   <httpEndpoint enabled="true" host="*" httpPort="9080" httpsPort="${default.https.port}" id="defaultHttpEndpoint" />
 
-  <enterpriseApplication id="EnterpriseHelloWorld.ear" location="EnterpriseHelloWorld.ear" name="EnterpriseHelloWorld.ear" />
+  <Application id="EnterpriseHelloWorld" location="/config/dropins/EnterpriseHelloWorld.ear" name="EnterpriseHelloWorld" />
 </server>
