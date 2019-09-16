@@ -1,8 +1,11 @@
-<server description="Hello World Liberty server">
+<server description="Hello World Server">
 
-  <!-- To access this server from a remote client add a host attribute to the following
-    element, e.g. host="*" -->
-  <httpEndpoint enabled="true" host="*" httpPort="9080" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
+ <featureManager>
+   <feature>servlet-3.0</feature>
+ </featureManager>
 
-  <application id="hello-world" location="hello-world.war" name="hello-world"/>
+<httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9090" />
+
+<webApplication contextRoot="helloworld" location="hello-world.war" />
+
 </server>
