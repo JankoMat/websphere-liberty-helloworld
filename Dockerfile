@@ -4,7 +4,7 @@ USER root
 COPY  EnterpriseHelloWorld.ear /config/dropins
 COPY server.xml /config/
 
-RUN chown -R 1001:0 /config/dropins
+RUN chown -R 1001:0 /config
 RUN if [ ! -z $REPOSITORIES_PROPERTIES ]; then mkdir /opt/ibm/wlp/etc/ \
   && echo $REPOSITORIES_PROPERTIES > /opt/ibm/wlp/etc/repositories.properties; fi
 
