@@ -6,8 +6,8 @@
 
 <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" />
 
-<application context-root="helloworld" type="war" id="helloworld" location="/opt/ibm/wlp/usr/servers/defaultServer/dropins/helloworld.war" name="helloworld"/>
-
+<webApplication contextRoot="helloworld" location="/opt/ibm/wlp/usr/servers/defaultServer/dropins/helloworld.war" />
+ 
 <applicationMonitor dropinsEnabled="false"/>
  
 </server>
