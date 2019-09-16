@@ -44,5 +44,6 @@ USER 1001
 
 COPY EnterpriseHelloWorld.ear /config/dropins
 COPY server.xml /config
+copy run $WORKDIR/run
 
-CMD ./run
+CMD $WORKDIR/run
