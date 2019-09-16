@@ -16,7 +16,7 @@ FROM websphere-liberty:19.0.0.5-kernel
 
 ENV WORKDIR="/usr/local/workdir" \
     WLP_DEBUG_ADDRESS="7777" \
-    ENABLE_JOLOKIA="true" \
+    ENABLE_JOLOKIA="true"
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
 
