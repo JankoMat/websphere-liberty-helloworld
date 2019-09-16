@@ -7,5 +7,7 @@
 <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" />
 
 <application context-root="helloworld" type="war" id="helloworld" location="helloworld.war" name="helloworld"/>
+
+<applicationMonitor dropinsEnabled="false"/>
  
 </server>
