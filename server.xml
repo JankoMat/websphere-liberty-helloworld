@@ -18,7 +18,7 @@
 
 <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" />
 
-<webApplication contextRoot="sample" location="/opt/ibm/wlp/usr/servers/defaultServer/dropins/io.openliberty.guides.multimodes.ear" />
+<enterpriseApplication name="io.openliberty.guides.multimodes.ear" id="io.openliberty.guides.multimodes.ear" location="/opt/ibm/wlp/usr/servers/defaultServer/dropins/io.openliberty.guides.multimodes.ear" />
  
 <applicationMonitor dropinsEnabled="false"/>
  
