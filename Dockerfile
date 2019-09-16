@@ -15,10 +15,7 @@ FROM websphere-liberty:19.0.0.5-kernel
 
 
 ENV WORKDIR="/usr/local/workdir" \
-    WLP_DEBUG_ADDRESS="7777" \
-    ENABLE_JOLOKIA="true"
-
-# Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
+    WLP_DEBUG_ADDRESS="7777"
 
 USER root
 
@@ -38,8 +35,6 @@ RUN chown -R 1001:0 /config && \
     apt --assume-yes install curl strace lsof tree 
 
 USER 1001
-COPY ./placeholder.txt $WORKDIR/artifacts 
-COPY ./placeholder.txt $WORKDIR/config 
 
 WORKDIR $WORKDIR
 
