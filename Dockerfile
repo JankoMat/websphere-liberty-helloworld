@@ -1,6 +1,6 @@
 FROM websphere-liberty:19.0.0.5-kernel
 
-COPY EnterpriseHelloWorld.ear /config/dropins
+COPY hello-world.ear /config/dropins
 COPY server.xml /config
 
 USER root
