@@ -15,7 +15,8 @@ FROM websphere-liberty:19.0.0.5-kernel
 
 
 ENV WORKDIR="/usr/local/workdir" \
-    WLP_DEBUG_ADDRESS="7777"
+    WLP_DEBUG_ADDRESS="7777" \
+    ENABLE_DEBUG="true"
 
 USER 1001
 
