@@ -45,4 +45,4 @@ USER 1001
 COPY EnterpriseHelloWorld.ear /config/dropins
 COPY server.xml /config
 
-RUN /opt/ibm/wlp/bin/server run defaultServer
+CMD ./run
