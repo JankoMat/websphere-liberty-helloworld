@@ -17,6 +17,12 @@ FROM websphere-liberty:19.0.0.5-kernel
 ENV WORKDIR="/usr/local/workdir" \
     WLP_DEBUG_ADDRESS="7777"
 
+USER 1001
+
+COPY EnterpriseHelloWorld.ear /config/dropins
+COPY server.xml /config
+copy run $WORKDIR/run
+
 USER root
 
 RUN chown -R 1001:0 /config && \
@@ -31,6 +37,8 @@ RUN chown -R 1001:0 /config && \
     mkdir -p $WORKDIR/config && \
     chown -R 1001:0 $WORKDIR && \
     chmod -R g+rw $WORKDIR && \
+    chown -R 1001:0 $WORKDIR/run && \
+    chmod -R g+rwx $WORKDIR/run && \
     apt update && \
     apt --assume-yes install curl strace lsof tree 
 
@@ -39,11 +47,5 @@ USER 1001
 WORKDIR $WORKDIR
 
 EXPOSE $WLP_DEBUG_ADDRESS
-
-USER 1001
-
-COPY EnterpriseHelloWorld.ear /config/dropins
-COPY server.xml /config
-copy run $WORKDIR/run
 
 CMD $WORKDIR/run
