@@ -13,4 +13,4 @@ RUN chgrp -R 0 /config \
  
 USER 1001
 
-RUN installUtility install --acceptLicense defaultServer
+RUN installUtility install --acceptLicense
