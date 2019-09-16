@@ -1,6 +1,6 @@
 FROM websphere-liberty:19.0.0.5-kernel
 
-COPY sample.war /config/dropins
+COPY io.openliberty.guides.multimodes.ear /config/dropins
 COPY server.xml /config/
 
 USER root
