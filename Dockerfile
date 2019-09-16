@@ -14,15 +14,11 @@ FROM websphere-liberty:19.0.0.5-kernel
 #USER 1001
 
 
-ENV STI_SCRIPTS_PATH="/usr/local/s2i" \ 
-    WORKDIR="/usr/local/workdir" \
+ENV WORKDIR="/usr/local/workdir" \
     WLP_DEBUG_ADDRESS="7777" \
-    ENABLE_DEBUG="false" \ 
     ENABLE_JOLOKIA="true" \
-    S2I_DESTINATION="/tmp" 
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
-COPY ./s2i/bin/ $STI_SCRIPTS_PATH 
 
 USER root
 
@@ -38,9 +34,8 @@ RUN chown -R 1001:0 /config && \
     mkdir -p $WORKDIR/config && \
     chown -R 1001:0 $WORKDIR && \
     chmod -R g+rw $WORKDIR && \
-    ln $STI_SCRIPTS_PATH/assemble-runtime $STI_SCRIPTS_PATH/assemble && \
     apt update && \
-    apt --assume-yes install curl strace lsof tree
+    apt --assume-yes install curl strace lsof tree 
 
 USER 1001
 COPY ./placeholder.txt $WORKDIR/artifacts 
@@ -52,4 +47,4 @@ EXPOSE $WLP_DEBUG_ADDRESS
 
 USER 1001
 
-CMD ["$STI_SCRIPTS_PATH/run"]
+RUN /opt/ibm/wlp/bin/server run defaultServer
