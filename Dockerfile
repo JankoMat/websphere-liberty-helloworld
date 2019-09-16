@@ -14,6 +14,8 @@ RUN chown -R 1001:0 /config && \
     chown -R 1001:0 /logs && \
     chmod -R g+rw /logs && \
     installUtility install defaultServer && \
+    chown -R 1001:0 /opt/ibm/wlp/output && \
+    chmod -R g+rw /opt/ibm/wlp/output && \
     apt update && \
     apt --assume-yes install curl strace lsof tree
 
