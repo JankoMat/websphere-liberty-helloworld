@@ -13,7 +13,7 @@ RUN chown -R 1001:0 /config && \
     chmod -R g+rw /opt/ibm/wlp/output && \
     chown -R 1001:0 /logs && \
     chmod -R g+rw /logs && \
-    installUtility install defaultServer && \
+    installUtility install servlet-3.0 jsp-2.3 && \
     apt update && \
     apt --assume-yes install curl strace lsof tree
 
