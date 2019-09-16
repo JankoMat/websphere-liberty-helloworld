@@ -6,6 +6,6 @@
 
 <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" />
 
-<webApplication contextRoot="helloworld" location="helloworld.war" />
-
+<application context-root="helloworld" type="war" id="helloworld" location="helloworld.war" name="helloworld"/>
+ 
 </server>
