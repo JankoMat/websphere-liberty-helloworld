@@ -15,6 +15,6 @@ RUN chown -R 1001:0 /config && \
     chmod -R g+rw /logs && \
     apt update && \
     apt --assume-yes install curl strace lsof tree && \
-    installUtility install adminCenter-1.0 servlet-3.0
+    installUtility install adminCenter-1.0 servlet-3.0 jsp-2.3
 
 USER 1001
