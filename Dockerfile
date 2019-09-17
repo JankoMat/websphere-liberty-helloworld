@@ -11,8 +11,6 @@ RUN chown -R was:root  /work/app && \
     chown -R was:root  /work && \
     chmod -R g+rwX /work && \
     chown -R was:root  /opt/IBM/WebSphere/AppServer/profiles/AppSrv01 && \
-    chmod -R g+rwX /opt/IBM/WebSphere/AppServer/profiles/AppSrv01 && \
-    wsadmin.sh -lang jython -conntype NONE -c "AdminApp.install('/work/app/io.openliberty.guides.multimodes.ear', '[-appname io.openliberty.guides -contextroot /converter]')" && \
-    /work/configure.sh
+    chmod -R g+rwX /opt/IBM/WebSphere/AppServer/profiles/AppSrv01
    
 EXPOSE 9080 9443
