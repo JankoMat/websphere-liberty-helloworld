@@ -4,11 +4,11 @@ USER root
 
 ENV ENABLE_BASIC_LOGGING=true
 
-COPY sample.war /work/app/
+COPY io.openliberty.guides.multimodes.ear /work/app/
 
 RUN chown -R was:root  /work/app/ && \
     chmod -R g+rw /work/app/ && \
-    wsadmin.sh -lang jython -conntype NONE -c "AdminApp.install('/work/app/HPB.FrontOffice.Pack.ear', '[-appname HPB.FrontOffice.Pack -contextroot /HPB.FrontOffice.Web]')" && \
+    wsadmin.sh -lang jython -conntype NONE -c "AdminApp.install('/work/app/io.openliberty.guides.multimodes.ear', '[-appname io.openliberty.guides -contextroot /converter]')" && \
     /work/configure.sh
    
 EXPOSE 9080 9443
