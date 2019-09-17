@@ -10,6 +10,8 @@ RUN chown -R was:root  /work/app && \
     chmod -R g+rw /work/app && \
     chown -R was:root  /work && \
     chmod -R g+rw /work && \
+    chown -R was:root  /opt/IBM/WebSphere/AppServer/profiles/AppSrv01 && \
+    chmod -R g+rw /opt/IBM/WebSphere/AppServer/profiles/AppSrv01 && \
     wsadmin.sh -lang jython -conntype NONE -c "AdminApp.install('/work/app/io.openliberty.guides.multimodes.ear', '[-appname io.openliberty.guides -contextroot /converter]')" && \
     /work/configure.sh
    
