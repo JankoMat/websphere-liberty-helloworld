@@ -1,18 +1,14 @@
-FROM websphere-liberty:19.0.0.5-kernel
-
-COPY sample.war /config/dropins
-COPY server.xml /config/
+FROM ibmcom/websphere-traditional:8.5.5.14-profile
 
 USER root
 
-RUN chown -R 1001:0 /config && \
-    chmod -R g+rw /config && \
-    chown -R 1001:0 /opt/ibm/wlp/usr/servers/defaultServer && \
-    chmod -R g+rw /opt/ibm/wlp/usr/servers/defaultServer && \
-    chown -R 1001:0 /logs && \
-    chmod -R g+rw /logs && \
-    installUtility install defaultServer && \
-    chown -R 1001:0 /opt/ibm/wlp/output && \
-    chmod -R g+rw /opt/ibm/wlp/output 
+ENV ENABLE_BASIC_LOGGING=true
 
-USER 1001
+COPY sample.war /work/app/
+
+RUN chown -R was:root  /work/app/ && \
+    chmod -R g+rw /work/app/ && \
+    wsadmin.sh -lang jython -conntype NONE -c "AdminApp.install('/work/app/HPB.FrontOffice.Pack.ear', '[-appname HPB.FrontOffice.Pack -contextroot /HPB.FrontOffice.Web]')" && \
+    /work/configure.sh
+   
+EXPOSE 9080 9443
