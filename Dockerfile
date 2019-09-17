@@ -7,8 +7,6 @@ ENV ENABLE_BASIC_LOGGING=true
 COPY io.openliberty.guides.multimodes.ear /work/app/
 
 RUN chown -R was:root  /work/app/ && \
-    chmod -R g+rw /work/app/ && \
-    wsadmin.sh -lang jython -conntype NONE -c "AdminApp.install('/work/app/io.openliberty.guides.multimodes.ear', '[-appname io.openliberty.guides -contextroot /converter]')" && \
-    /work/configure.sh
+    chmod -R g+rw /work/app/
    
 EXPOSE 9080 9443
