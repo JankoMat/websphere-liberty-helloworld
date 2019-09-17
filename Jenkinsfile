@@ -4,7 +4,7 @@ node("maven") {
        checkout scm
    }
    stage('create image') {
-       sh 'oc start-build helloworld --from-dir=. -n jm-test --follow'
+       sh 'oc start-build sample --from-dir=. -n jm-test --follow'
    }
  } 
  catch (e) {
