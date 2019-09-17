@@ -18,7 +18,7 @@
 
 <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" />
 
-<webApplication contextRoot="sample" location="/opt/ibm/wlp/usr/servers/defaultServer/dropins/sample.war" />
+<webApplication location="/opt/ibm/wlp/usr/servers/defaultServer/dropins/sample.war" />
  
 <applicationMonitor dropinsEnabled="false"/>
  
